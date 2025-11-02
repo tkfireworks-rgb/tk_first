@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TK Fireworks - Home</title>
-    <link rel="stylesheet" href="animation.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TK Fireworks - Home</title>
+  <!-- Make sure animation.css is the correct stylesheet for the page -->
+  <link rel="stylesheet" href="animation.css" />
 </head>
 <body class="home-page">
-    <nav>
-        <div class="logo">
-            <img src="logo.png" alt="TK Fireworks Logo" style="height: 40px; vertical-align: middle;">
-            TK Fireworks
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="promisex.html">Our Promise</a></li>
-            <li><a href="creativity.html">Creativity</a></li>
-            <li><a href="people.html">People</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="distri.html">Distributors</a></li>
-        </ul>
-        <button id="soundToggle" title="Toggle Sound">🔊</button>
-    </nav>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="TK Fireworks Logo" style="height: 40px; vertical-align: middle" />
+      TK Fireworks
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="promisex.html">Our Promise</a></li>
+      <li><a href="creativity.html">Creativity</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="distri.html">Distributors</a></li>
+    </ul>
+    <button id="soundToggle" title="Toggle Sound" aria-label="Toggle Sound">🔊</button>
+  </nav>
 
-    <section class="hero">
-        <canvas id="fireworksCanvas"></canvas>
-        <div class="hero-content">
-            <h1>We Are Launching Soon!</h1>
-            <p>TK Fireworks – Where Every Spark Has a Story!</p>
-            <div id="countdown">
-                <span id="days">00</span>d :
-                <span id="hours">00</span>h :
-                <span id="minutes">00</span>m :
-                <span id="seconds">00</span>s
-            </div>
-        </div>
-    </section>
+  <section class="hero">
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="hero-content">
+      <h1>We Are Launching Soon!</h1>
+      <p>TK Fireworks – Where Every Spark Has a Story!</p>
+      <div id="countdown" aria-live="polite" aria-atomic="true">
+        <span id="days">00</span>d :
+        <span id="hours">00</span>h :
+        <span id="minutes">00</span>m :
+        <span id="seconds">00</span>s
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>Contact Us: 67895678967 | 567845678456</p>
-        <p>Address: Lorem Ipsum, Your City, Country</p>
-    </footer>
+  <footer>
+    <p>Contact Us: 67895678967 | 567845678456</p>
+    <p>Address: Lorem Ipsum, Your City, Country</p>
+  </footer>
 
-    <script src="Sound.js"></script>
+  <!-- Use correct capitalization for JS file: Sound.js -->
+  <script src="Sound.js"></script>
 </body>
 </html>
