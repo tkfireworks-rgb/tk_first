@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TK Traders</title>
+  <title>TK Fireworks</title>
   <style>
     /* Reset */
     * {
@@ -20,7 +20,7 @@
       height: 100vh;
     }
 
-    /* Firework canvas background */
+    /* Fireworks Background */
     #fireworks {
       position: fixed;
       top: 0;
@@ -31,7 +31,7 @@
       background: radial-gradient(ellipse at bottom, #020111 0%, #000000 100%);
     }
 
-    /* Main content styling */
+    /* Main content */
     .content {
       position: relative;
       z-index: 2;
@@ -42,31 +42,43 @@
       justify-content: center;
       height: 100%;
       backdrop-filter: blur(3px);
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     img {
-      width: 200px;
+      width: 150px;
       margin-bottom: 20px;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     h1 {
       font-size: 2.5em;
-      margin-bottom: 10px;
       color: #FFD700;
       text-shadow: 0 0 10px #FF4500;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
+      font-size: 1.1em;
+      max-width: 700px;
+      line-height: 1.7;
+      margin: 10px 0 20px;
     }
 
-    video {
-      width: 80%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-      margin: 20px 0;
+    h2, h3 {
+      color: #00FFFF;
+      text-shadow: 0 0 10px #00FFFF, 0 0 20px #FF00FF;
+      margin-top: 25px;
     }
 
     a.button {
@@ -93,31 +105,63 @@
       color: #00FFFF;
       text-shadow: 0 0 10px #00FFFF, 0 0 20px #FF00FF;
     }
+
+    .highlight {
+      color: #FFD700;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
   <canvas id="fireworks"></canvas>
 
   <div class="content">
-    <img src="logo.png" alt="TK Traders Logo" />
-    <h1>We’re Working on It!</h1>
-    <p>Coming soon with amazing products. Contact us below.</p>
+    <img src="logo.png" alt="TK Fireworks Logo" />
+    <h1>WE ARE GOING FOR TRIAL AND ERROR 🔥✨</h1>
 
-    <video controls>
-      <source src="product-video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <h2>About Us – TK FIREWORKS</h2>
+    <p>“We started with sparks… now we make people smile!” 🔥✨</p>
+
+    <p>Every brand has a story.<br>
+      Ours began with a few dreamers who weren’t afraid to get a little burnt while chasing bright ideas. 😄
+    </p>
+
+    <p>We weren’t born experts — we became them through smoke, sweat, and a thousand “oops” moments that taught us exactly how not to make a cracker 💥😂.
+      But every spark, every setback, and every sleepless night built the brand you see today — 
+      <span class="highlight">TK Fireworks</span>, the name that stands for fun, colour, and complete safety.
+    </p>
+
+    <h3>💫 Safety First, Always First</h3>
+    <p>Our crackers are fully safe, kid-friendly, and crafted to bring joy — never fear.<br>
+      We design each product with the same care a parent has for their child.<br>
+      Every single batch is checked, tested, and perfected to make sure it’s safe to hold, safe to light, and safe to enjoy.<br>
+      Because at TK Fireworks, safety isn’t a rule — it’s our only priority.
+    </p>
+
+    <h3>👷‍♂ The Real Stars – Our Workers</h3>
+    <p>Behind every sparkle are the steady hands of our workers — the heroes who pour their skill, patience, and passion into every single firework.<br>
+      They are the reason TK Fireworks glows brighter every year.<br>
+      We don’t just make fireworks — we make family moments, festival smiles, and childhood memories.
+    </p>
+
+    <p>So when you light a TK Firework, remember —<br>
+      you’re lighting the hard work, humour, and heart of everyone who built it.
+    </p>
+
+    <h3>TK Fireworks — Safe Sparks, Happy Hearts. 😄✨</h3>
+
+    <div class="number" id="numberDisplay">📞 +91 0</div>
 
     <div>
-      <a class="button" href="mailto:info@tktaders.com">Email Us</a>
+      <a class="button" href="mailto:info@tkfireworks.com">Email Us</a>
       <a class="button" href="https://wa.me/911234567890" target="_blank">WhatsApp Us</a>
     </div>
-
-    <div class="number">📞 +91 12345 67890</div>
   </div>
 
-  <!-- Fireworks JavaScript -->
+  <!-- JavaScript for Fireworks and Number Animation -->
   <script>
+    // 🎇 Fireworks Effect
     const canvas = document.getElementById('fireworks');
     const ctx = canvas.getContext('2d');
     let w, h;
@@ -201,6 +245,21 @@
       requestAnimationFrame(animate);
     }
     animate();
+
+    // 🔢 Number display animation
+    const numDisplay = document.getElementById("numberDisplay");
+    let number = 0;
+    const targetNumber = 1234567890;
+    const speed = 50;
+
+    const interval = setInterval(() => {
+      number += Math.floor(targetNumber / 100);
+      if (number >= targetNumber) {
+        number = targetNumber;
+        clearInterval(interval);
+      }
+      numDisplay.textContent = "📞 +91 " + number.toLocaleString("en-IN");
+    }, speed);
   </script>
 </body>
 </html>
